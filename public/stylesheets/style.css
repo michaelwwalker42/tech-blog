@@ -20,6 +20,16 @@ body {
   line-height: 1.5;
   font-size: 16px;
 }
+a {
+  text-decoration: none;
+}
+h1 a {  
+  color: var(--dark);
+}
+nav a {
+  color: var(--primary);
+  padding: 29px;
+}
 
 h1,
 h2,
