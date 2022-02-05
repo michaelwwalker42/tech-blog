@@ -21,7 +21,7 @@ router.post('/', (req, res) => {
       res.status(500).json(err);
     });
 });
-
+// login route
 router.post('/login', (req, res) => {
   // expects {username: 'lernantino@gmail.com', password: 'password1234'}
   User.findOne({
@@ -50,7 +50,7 @@ router.post('/login', (req, res) => {
     });
   });
 });
-
+// logout route
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
