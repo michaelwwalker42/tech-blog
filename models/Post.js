@@ -6,7 +6,6 @@ class Post extends Model { }
 // create fields/columns for Post model
 Post.init(
   {
-
     title: {
       type: DataTypes.STRING,
       allowNull: false
@@ -14,11 +13,10 @@ Post.init(
     post_content: {
       type: DataTypes.STRING,
       allowNull: false,
-    },
-
+    }
   },
   {
-    sequelize,
+    sequelize
   }
 );
 
