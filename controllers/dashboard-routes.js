@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, User } = require('../models');
+const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 // get all posts for dashboard
@@ -9,6 +9,7 @@ router.get('/', withAuth, (req, res) => {
       user_id: req.session.user_id
     },
     attributes: [
+      'id',
       'title',
       'created_at',
       'post_content'
@@ -16,7 +17,7 @@ router.get('/', withAuth, (req, res) => {
     include: [
       {
         model: Comment,
-        attributes: ['comment_text', 'created_at'],
+        attributes: ['id', 'comment_text', 'post_id', 'user_id','created_at'],
         include: {
           model: User,
           attributes: ['username']
@@ -37,7 +38,7 @@ router.get('/', withAuth, (req, res) => {
       res.status(500).json(err);
     });
 });
-
+// edit route
 router.get('/edit/:id', withAuth, (req, res) => {
   Post.findOne({
     where: {
