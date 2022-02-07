@@ -30,6 +30,12 @@ nav a {
   color: var(--primary);
   padding: 29px;
 }
+li {
+  list-style: none;
+}
+h2 a{
+  color: var(--primary);
+}
 
 h1,
 h2,
