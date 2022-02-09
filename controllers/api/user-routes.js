@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models');
-
+// create user
 router.post('/', (req, res) => {
   // expects {username: 'Lernantino', password: 'password1234'}
   User.create({
