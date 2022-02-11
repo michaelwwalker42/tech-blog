@@ -1,2 +1,19 @@
-{{!-- <h1>This is single-post handlebar</h1> --}}
 {{> post-info post}}
+
+{{#if loggedIn}}
+<form class="comment-form">
+  <div>
+    <textarea name="comment-body" class="form-input"></textarea>
+  </div>
+
+  <div>
+    <button type="submit" class="btn">add comment</button>
+  </div>
+</form>
+{{/if}}
+
+{{> comments post.comments}}
+
+{{#if loggedIn}}
+<script src="/javascript/comments.js"></script>
+{{/if}}

@@ -1,1 +1,17 @@
-<h1>This is the dashboard</h1>
+<div class="card">
+  {{#each posts}}
+  <div class="card-header">
+    <h2>
+      <a href="/dashboard/edit/{{id}}">
+        <div>
+          {{title}}
+        </div>
+      </a>
+    </h2>
+    <div>{{ format_date createdAt }}</div>
+  </div>
+  <br>
+  {{/each}}
+</div>
+
+<a href="/dashboard/new">Create New Post</a>

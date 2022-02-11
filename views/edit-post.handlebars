@@ -1,1 +1,21 @@
-<h1>This is edit-post handlebar</h1>
+<div class="card">
+  <h2 class="card-header">Edit Post</h2>
+
+  <form class="card-body edit-post-form">
+    <div class="form-group">
+      {{!-- hidden post id value --}}
+      <input type="hidden" id="post_id" value="{{post.id}}">
+      <label class="form-label">Title:</label>
+      <input type="text" class="form-input" id="title" value="{{post.title}}">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Content:</label>
+      <textarea class="form-input" id="content">{{post.post_content}}</textarea>
+    </div>
+    <button type="submit" class="btn">Edit Post</button>
+    <button type="click" class="btn delete-post-btn">Delete Post</button>
+  </form>
+
+  <script src="/javascript/edit-post.js"><script>
+
+    

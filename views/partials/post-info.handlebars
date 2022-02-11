@@ -7,7 +7,7 @@
         </div>
       </a>
     </h2>
-    <div>posted by {{user.username}} on {{created_at}}</div>
+    <div>posted by {{user.username}} on {{ format_date createdAt}}</div>
   </div>
   <p class="card-body">
     {{post_content}}
