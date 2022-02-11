@@ -21,19 +21,19 @@ router.get('/', (req, res) => {
       res.status(500).json(err);
     });
 });
-// single post route
+// single post route 
 router.get('/post/:id', (req, res) => {
-  Post.findOne({
-    where: {
-      id: req.params.id
-    },
-    include: [User, 
-      {
-        model: Comment,
-        include: [User]
-      },
-    ]
-  })
+  // find by primary key
+  Post.findByPk(
+    req.params.id,
+    {
+      include: [User,
+        {
+          model: Comment,
+          include: [User]
+        },
+      ]
+    })
     .then(dbPostData => {
       if (!dbPostData) {
         res.status(404).json({ message: 'No post found with this id' });
@@ -42,6 +42,7 @@ router.get('/post/:id', (req, res) => {
 
       // serialize the data
       const post = dbPostData.get({ plain: true });
+      console.log(post);
 
       // pass data to template
       res.render('single-post', {
