@@ -2,7 +2,7 @@ async function editFormHandler(event) {
   event.preventDefault();
 
   const title = document.querySelector('#title').value.trim();
-  const post_content = document.querySelector('#content').value.trim;
+  const post_content = document.querySelector('#content').value;
   // get hidden post id 
   const id = document.querySelector('#post_id').value
   // this way would get the id from the url in the browser
