@@ -2,9 +2,8 @@ const router = require('express').Router();
 const { User } = require('../../models');
 // create user
 router.post('/', (req, res) => {
-  // expects {username: 'Lernantino', password: 'password1234'}
   User.create({
-    username: req.body.username,    
+    username: req.body.username,
     password: req.body.password
   })
     .then(dbUserData => {
@@ -12,7 +11,7 @@ router.post('/', (req, res) => {
         req.session.user_id = dbUserData.id;
         req.session.username = dbUserData.username;
         req.session.loggedIn = true;
-  
+
         res.json(dbUserData);
       });
     })
@@ -23,7 +22,6 @@ router.post('/', (req, res) => {
 });
 // login route
 router.post('/login', (req, res) => {
-  // expects {username: 'lernantino@gmail.com', password: 'password1234'}
   User.findOne({
     where: {
       username: req.body.username
@@ -45,7 +43,7 @@ router.post('/login', (req, res) => {
       req.session.user_id = dbUserData.id;
       req.session.username = dbUserData.username;
       req.session.loggedIn = true;
-  
+
       res.json({ user: dbUserData, message: 'You are now logged in!' });
     });
   });

@@ -47,7 +47,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
       res.status(500).json(err);
     });
 });
-
+// new post route
 router.get('/new', withAuth, (req, res) => {
   res.render('new-post', { loggedIn: req.session.loggedIn })
 });

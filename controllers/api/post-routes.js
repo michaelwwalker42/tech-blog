@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Post } = require('../../models');
 const withAuth = require('../../utils/auth');
-
+// create post route
 router.post('/', withAuth, (req, res) => {
   Post.create({...req.body, user_id: req.session.user_id})
     .then(dbPostData => res.json(dbPostData))
@@ -10,7 +10,7 @@ router.post('/', withAuth, (req, res) => {
       res.status(500).json(err);
     });
 });
-
+// update post route
 router.put('/:id', withAuth, (req, res) => {
   Post.update(
     req.body,
@@ -32,7 +32,7 @@ router.put('/:id', withAuth, (req, res) => {
       res.status(500).json(err);
     });
 });
-
+// delete post route
 router.delete('/:id', withAuth, (req, res) => {
   console.log('id', req.params.id);
   Post.destroy({
