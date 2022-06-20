@@ -8,6 +8,7 @@
 
   ## Table of Contents
   * [Usage](#usage)
+  * [Technologies](#technologies)
   * [Deployment](#deployment)
   * [License](#license)
   * [Questions](#questions)
@@ -15,6 +16,12 @@
 
   ## Usage
   Sign up or log in to create/edit posts, and comment on others' posts. 
+
+  ## Technologies
+  - Handlebars.js
+  - MySQL2
+  - Express.js
+  - Sequelize
 
   ## Deployment  
   [Click here to go to site](https://walker-tech-blog.herokuapp.com/)
